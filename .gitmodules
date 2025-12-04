@@ -1,0 +1,3 @@
+[submodule "PBE/Atividades/RSDB"]
+	path = PBE/Atividades/RSDB
+	url = https://github.com/Lumikin/RSBD.git
