@@ -1,0 +1,96 @@
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400; /* exemplo: 100 a 800 */
+  font-style: normal;
+}
+body {
+  background-image: url("assets/videoplayback.gif");
+}
+
+header {
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav h2 {
+  text-align: center;
+}
+.Sobre img {
+  width: 100;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* centraliza na horizontal */
+}
+
+nav li {
+  background-color: #fe96e0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
+}
+h1 {
+  padding: 20px 20px;
+  display: inline-block;
+  background-color: #4dcc8e;
+  font-family: "JetBrains Mono";
+  text-align: center;
+  border-radius: 10px;
+}
+h2 {
+  padding: 20px 20px;
+  display: inline-block;
+  background-color: #ff3eb7;
+  font-family: "JetBrains Mono";
+  text-align: center;
+  border-radius: 10px;
+}
+p {
+  font-family: "JetBrains Mono";
+}
+
+.MFoto {
+  width: 90%;
+  max-width: 300px;
+  display: inline-block;
+}
+
+.Minha_foto {
+  text-align: center;
+}
+.Minha_foto p {
+  background-color: #4dcc8e;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px;
+}
+.Sobre {
+  text-align: center;
+}
+
+.Sobre p {
+  text-align: center;
+  color: white;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+.Curriculo {
+  text-align: center;
+  color: aliceblue;
+}
+.Curriculo img {
+  width: 600px;
+}

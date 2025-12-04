@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BlackFrame — Tema Hacking</title>
+    <style>
+        /* Reset simples */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            font-family: "IBM Plex Mono", "Courier New", monospace;
+            background: #020403;
+            color: #9fdc8c;
+        }
+
+        /* Canvas matrix */
+        #matrix {
+            position: fixed;
+            inset: 0;
+            z-index: 0
+        }
+
+        header {
+            position: relative;
+            z-index: 3;
+            padding: 18px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: .12em;
+            font-size: 18px
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            margin-left: 16px;
+            opacity: .9
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 60px 32px;
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: start
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .6));
+            border: 1px solid rgba(159, 220, 140, .08);
+            backdrop-filter: blur(4px);
+            padding: 18px;
+            border-radius: 12px
+        }
+
+        h1 {
+            font-size: 34px;
+            color: #d7ffcf;
+            margin-bottom: 8px
+        }
+
+        p.lead {
+            color: #bfe6b2;
+            line-height: 1.5
+        }
+
+        /* Terminal fake */
+        .terminal {
+            height: 320px;
+            overflow: auto;
+            padding: 12px;
+            background: #050a06;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .04)
+        }
+
+        .terminal .line {
+            font-size: 13px;
+            color: #9fdc8c;
+            margin: 6px 0;
+            white-space: pre-wrap
+        }
+
+        .prompt {
+            color: #8fd0a0
+        }
+
+        /* Controls */
+        .buttons {
+            margin-top: 12px
+        }
+
+        button {
+            background: transparent;
+            border: 1px solid rgba(159, 220, 140, .18);
+            color: inherit;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 8px
+        }
+
+        button:hover {
+            background: rgba(159, 220, 140, .02)
+        }
+
+        /* Grid de seções */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 22px
+        }
+
+        .feature {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .03)
+        }
+
+        .small {
+            font-size: 13px;
+            color: #cbe9c8
+        }
+
+        footer {
+            padding: 20px;
+            border-top: 1px dashed rgba(255, 255, 255, .02);
+            text-align: center;
+            color: #8fbf95;
+            margin-top: 40px
+        }
+
+        /* Responsivo */
+        @media (max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .features {
+                grid-template-columns: repeat(1, 1fr)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="matrix"></canvas>
+    <header>
+        <div class="brand">BlackFrame</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#terminal">Terminal</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <div>
+                <div class="card">
+                    <h1>BlackFrame — Interface temática de "hacking"</h1>
+                    <p class="lead">Visual retrô de terminal, efeitos estilo "Matrix rain" e um terminal simulado para
+                        demos e portfolios. Atenção: este site é apenas visual — não contém instruções para invasão ou
+                        atividades ilegais.</p>
+                    <div class="buttons">
+                        <button id="runDemo">Executar demo</button>
+                        <button id="clear">Limpar terminal</button>
+                    </div>
+
+                    <div style="margin-top:12px" class="terminal" id="terminal" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="card">
+                    <h3>Sobre esse tema</h3>
+                    <p class="small">Útil para portfolios, páginas de eventos tech ou landing pages com estética
+                        cyberpunk. O terminal é fictício e apenas exibe mensagens pré-programadas.</p>
+
+                    <div class="features" style="margin-top:12px">
+                        <div class="feature"><strong>Visual</strong>
+                            <div class="small">Dark + neon green</div>
+                        </div>
+                        <div class="feature"><strong>Interativo</strong>
+                            <div class="small">Terminal fake</div>
+                        </div>
+                        <div class="feature"><strong>Responsivo</strong>
+                            <div class="small">Mobile & Desktop</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:16px" class="card">
+                    <h4>Contato</h4>
+                    <form id="contactForm">
+                        <label class="small">Nome</label><br>
+                        <input name="nome"
+                            style="width:100%;padding:8px;margin:8px 0;border-radius:6px;border:1px solid rgba(255,255,255,.06);background:transparent;color:inherit"><br>
+                        <label class="small">Mensagem</label><br>
+                        <textarea name="mensagem" rows="4"
+                            style="width:100%;padding:8px;margin:8px 0;border-radius:6px;border:1px solid rgba(255,255,255,.06);background:transparent;color:inherit"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </aside>
+        </section>
+
+        <section id="sobre" style="margin-top:28px">
+            <div class="card">
+                <h2>Design e ética</h2>
+                <p class="small">Este template entrega a sensação visual do universo "hacker" sem ensinar técnicas. Use
+                    para fins educacionais, artísticos e de apresentação. Sempre respeite a lei e a ética digital.</p>
+            </div>
+        </section>
+
+        <footer id="contato">© 2025 BlackFrame — Template demo</footer>
+    </main>
+
+    <script>
+        // MATRIX RAIN
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = innerWidth;
+        let h = canvas.height = innerHeight;
+        const cols = Math.floor(w / 18) + 1;
+        const ypos = Array(cols).fill(0);
+
+        function matrixFrame() {
+            ctx.fillStyle = 'rgba(0,0,0,0.06)';
+            ctx.fillRect(0, 0, w, h);
+            ctx.fillStyle = '#9fdc8c';
+            ctx.font = '14px monospace';
+            for (let i = 0; i < ypos.length; i++) {
+                const text = String.fromCharCode(33 + Math.random() * 94);
+                const x = i * 18;
+                ctx.fillText(text, x, ypos[i] * 18);
+                if (ypos[i] * 18 > h && Math.random() > 0.975) ypos[i] = 0;
+                ypos[i]++;
+            }
+            requestAnimationFrame(matrixFrame);
+        }
+        matrixFrame();
+        addEventListener('resize', () => { w = canvas.width = innerWidth; h = canvas.height = innerHeight });
+
+        // TERMINAL SIMULADO (sem qualquer ação de rede/sistema)
+        const terminal = document.getElementById('terminal');
+        const demoBtn = document.getElementById('runDemo');
+        const clearBtn = document.getElementById('clear');
+
+        const demoLines = [
+            '[init] bootstrapping BlackFrame v1.0',
+            '[ok] kernel visual loaded',
+            '[..] scanning modules',
+            '[ok] display: neon/monospace',
+            '[ok] matrix engine active',
+            '[info] user: visitante',
+            '>> conexão simulada estabelecida',
+            '[warn] este console é apenas demonstrativo',
+            '[done] demo finalizada'
+        ];
+
+        function printLine(text, delay = 0) {
+            return new Promise(res => {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'line';
+                    el.textContent = text;
+                    terminal.appendChild(el);
+                    terminal.scrollTop = terminal.scrollHeight;
+                    res();
+                }, delay);
+            });
+        }
+
+        demoBtn.addEventListener('click', async () => {
+            demoBtn.disabled = true;
+            for (let i = 0; i < demoLines.length; i++) {
+                await printLine(demoLines[i], 350);
+            }
+            demoBtn.disabled = false;
+        });
+
+        clearBtn.addEventListener('click', () => { terminal.innerHTML = '' });
+
+        // Formulário: apenas simula envio
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = e.target.nome.value || 'Anônimo';
+            const mensagem = e.target.mensagem.value || '(sem mensagem)';
+            printLine(`[form] ${nome} -> ${mensagem}`);
+            e.target.reset();
+        });
+
+        // Acessibilidade: reduz animação se prefere-reduzido
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            cancelAnimationFrame(matrixFrame);
+            canvas.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

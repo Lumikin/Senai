@@ -1,0 +1,16 @@
+<Pedidos>
+    <Dados>
+        <nome> Lucas Miranda </nome>
+        <idade> 16 </idade>
+        <altura> 1.78 </altura>
+        <pais> Brasil </pais>
+        <cidade> São Paulo </cidade>
+        <CPF> 000000000-00 </CPF>
+        <CEP> 00000-000 </CEP>
+        <produtos> Carta Pokemon </produtos>
+        <nomeCarta> Zeraora </nomeCarta>
+        <quantidade> 1 </quantidade>
+    </Dados>
+</Pedidos>
+
+

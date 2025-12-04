@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1> Teste de atributos adicionais</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend> Informações pessoais</legend>
+            <label for="nome"> Nome completo:
+                <input type="text" id="nome" name="nome" placeholder="Maria">
+            </label>
+            <label for="email"> email:
+                <input type="email" name="email" id="email" placeholder="exemplo@dominio.com">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Preferencias</legend>
+            <label for="profissoes"> profissao:
+                <input list="profissoes" id="profissao" name="profissao" placeholder="Ex: Analista de dados" required>
+                <datalist id="profissoes">
+                    <option value=" Programador Backend">
+                    <option value="Programador Frontend">
+                    <option value="Analista de dados">
+                    <option value="Designer">
+                    </option>
+                </datalist>
+            </label>
+            <label for="genero">Genero:
+                <select name="genero" id="genero">
+                    <option value=""> Selecione </option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="Blackberry">Blackberry</option>
+                    <option value="Arch Linux">Arch Linux</option>
+                    <option value="Debian"> Debian</option>
+                    <option value="outro"> Outro</option>
+                    </datalist>
+                </select>
+            </label>
+            <label for="Telefone"> Telefone:
+                <input type="tel" name="Telefone" id="Telefone" value="900000">
+            </label>
+        </fieldset>
+    </form>
+    <!-- Atributos -->
+    <!-- name: identifica o campo para o backend do dado enviado -->
+    <!-- id: identifica o cargo no HTML, usando com label, CSS e javascript -->
+    <!-- (não substitui o label) -->
+    <!-- required: torna o preenchimento obrigatorio -->
+
+</body>
+
+</html>

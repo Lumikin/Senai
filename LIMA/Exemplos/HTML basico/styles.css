@@ -1,0 +1,40 @@
+body {
+  margin: 0; /* Espaçamento externo */
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+}
+header {
+  background-color: whitesmoke;
+  color: gray;
+}
+nav {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 10px 0;
+}
+nav a {
+  color: blue;
+  margin: 0 5px;
+  text-decoration: nome;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.conteudo {
+  /* o ponto chama a classe */
+  padding: 30px;
+}
+.projeto {
+  margin: 1px 1px 30px 1px;
+  border-left: 5px solid salmon;
+  padding-left: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

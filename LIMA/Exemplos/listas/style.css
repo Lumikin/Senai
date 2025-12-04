@@ -1,0 +1,24 @@
+ul li{
+    text-align: center;
+    list-style:initial;
+    text-align:justify;
+    text-decoration:underline;
+    text-size-adjust: 80px;
+}
+ol li{
+    text-align: center;
+    text-align:justify;
+    text-decoration:underline;
+    text-size-adjust: 80px;
+}
+
+
+li:hover{
+    color: aqua;
+}
+button{
+    text-align: center;
+    border: 10px;
+    border-color: black;
+    border-radius: 100px;
+}

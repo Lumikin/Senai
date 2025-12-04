@@ -1,0 +1,13 @@
+
+p {
+  /* Aplica 1px de padding em todos os lados do parágrafo */
+  padding: 1px;
+
+  /* Com border-box, width inclui padding e borda */
+  box-sizing: border-box;
+  width: 300px;
+
+  /* content-box faz width considerar apenas o conteúdo */
+  box-sizing: content-box;
+}
+

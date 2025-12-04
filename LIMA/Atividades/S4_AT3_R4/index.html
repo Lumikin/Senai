@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="magic.js" defer></script>
+</head>
+
+<body>
+    <h1>Formulário de Inscrição para Workshop de Desenvolvimento Web</h1>
+    <p>Esse é um formulário para se inscrever no workshop de "Desenvolvimento Web".</p>
+
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+
+
+            <label for="nome">
+                Nome completo:
+                <input required type="text" name="nome" id="nome" placeholder="Ana Caroline Farias Tomaz"
+                    pattern="^[a-zA-ZÀ-ÿ\s]{3,}$" maxlength="100">
+            </label>
+            <br><br>
+
+            <label for="cidade">
+                Cidade:
+                <input required type="text" name="cidade" id="cidade" placeholder="São Paulo"
+                    pattern="^[a-zA-ZÀ-\s]{2,}$" maxlength="50"> <!-- Esse rejex pega o minimo de 2 palavras -->
+            </label>
+            <br><br>
+            <label for="email">
+                E-mail:
+                <input required type="email" name="email" id="email" placeholder="anacftomaz001@gmail.com"
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" maxlength="100">
+                <!-- O rejex ele espera o @ e o . do email -->
+            </label>
+            <br><br>
+
+            <label for  ="telefone">
+                Telefone:
+                <input required type="tel" name="telefone" id="telefone" placeholder="(19) 98846-8325"
+                    pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" maxlength="15">
+                <!-- O rejex espera numeros, parenteses e exige o DDD   -->
+            </label>
+            <br><br>
+
+
+            <label for="comentario">
+                Comentários adicionais:
+                <textarea name="comentario" id="comentario" rows="4" maxlength="500"
+                    placeholder="Digite seus comentários aqui..."></textarea>
+            </label>
+            <br><br>
+
+
+            <label for="faixa-etaria">
+                Faixa etária:
+                <select required name="faixa-etaria" id="faixa-etaria">
+                    <option value="">Selecione</option>
+                    <option value="18-25">18-25 anos</option>
+                    <option value="26-35">26-35 anos</option>
+                    <option value="36-45">36-45 anos</option>
+                    <option value="46+">46+ anos</option>
+                </select>
+            </label>
+            <br><br>
+
+            <label for="area-interesse">
+                Área de interesse:
+                <select required name="area-interesse" id="area-interesse">
+                    <option value="">Selecione</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="fullstack">Fullstack</option>
+                    <option value="design">Design</option>
+                </select>
+            </label>
+            <br><br>
+
+            <fieldset>
+                <legend>Turno preferencial do workshop: </legend>
+                <label>
+                    <input required type="radio" name="turno" value="manha"> Manhã
+                </label>
+                <label>
+                    <input type="radio" name="turno" value="tarde"> Tarde
+                </label>
+                <label>
+                    <input type="radio" name="turno" value="noite"> Noite
+                </label>
+            </fieldset>
+            <br><br>
+
+            <fieldset>
+                <legend>Topicos de interesse (selecione pelo menos um): </legend>
+                <label>
+                    <input type="checkbox" name="topicos" value="html"> HTML
+                </label>
+                <label>
+                    <input type="checkbox" name="topicos" value="css"> CSS
+                </label>
+                <label>
+                    <input type="checkbox" name="topicos" value="javascript"> JavaScript
+                </label>
+                <label>
+                    <input type="checkbox" name="topicos" value="react"> React
+                </label>
+                <label>
+                    <input type="checkbox" name="topicos" value="node"> Node.js
+                </label>
+                <label>
+                    <input type="checkbox" name="topicos" value="Python"> Python
+                </label>
+            </fieldset>
+            <br><br>
+            <label for="documento">
+                Upload de documento de identidade (opcional, PDF ou imagem):
+                <input type="file" name="documento" id="documento" accept=".pdf,.jpg,.jpeg,.png">
+            </label>
+            <br><br>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+
+
+</body>
+
+</html>
