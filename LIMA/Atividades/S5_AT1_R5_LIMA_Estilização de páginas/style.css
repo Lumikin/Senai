@@ -1,0 +1,298 @@
+/* ===========================
+   RESET BÁSICO E CONFIG GERAL
+   ============================ */
+
+/* Remoção de margens padrão para controlar o espaçamento de forma consistente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Facilita o uso do box model e evita “estouro” de largura */
+}
+
+/* Uso de fonte sem serifa para facilitar a leitura em tela e cores suaves de fundo/texto [web:9][web:19] */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f8f5; /* Verde bem claro para sensação de leveza e natureza [web:9] */
+  color: #23413a; /* Verde escuro suave para contraste e boa leitura [web:9][web:19] */
+}
+
+/* Centraliza e limita a largura do conteúdo, ajudando na leitura em telas grandes [web:20] */
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   TOPO E MENU
+   ============================ */
+
+/* Fundo em gradiente com verde e azul claro para transmitir natureza + confiança [web:6][web:19] */
+.topo {
+  background: linear-gradient(135deg, #2e8b57, #4fc3f7);
+  color: #ffffff;
+  padding: 1.5rem 0;
+}
+
+/* Flex para alinhar logo e menu na mesma linha em telas maiores [web:20] */
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo com ícone e textos empilhados, reforçando identidade visual */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain; /* Evita distorção do ícone em diferentes tamanhos [web:7] */
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Menu usando flex para distribuir os links horizontalmente */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Links em letras maiúsculas para dar destaque visual e reforçar a navegação */
+.menu a {
+  text-decoration: none;
+  color: #e0f7fa;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Estado hover para feedback visual no menu, garantindo boa experiência do usuário [web:7] */
+.menu a:hover,
+.menu a:focus {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ===========================
+   SEÇÕES GERAIS
+   ============================ */
+
+/* Espaçamento vertical generoso para “fazer o layout respirar” [web:7] */
+.secao {
+  padding: 3rem 0;
+}
+
+/* Fundo claro alternando entre branco e verde muito claro para ritmo visual [web:9] */
+.secao-clara {
+  background-color: #ffffff;
+}
+
+.secao-media {
+  background-color: #e1f5e4; /* Verde médio suave para criar contraste sem pesar [web:9] */
+}
+
+.secao-escura {
+  background-color: #1b4b3b;
+  color: #e0f7fa;
+}
+
+/* Títulos com cor de destaque e espaçamento inferior para separar do texto */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1b5e20; /* Verde mais intenso para reforçar identidade ambiental [web:9] */
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #155f3d;
+}
+
+/* Parágrafos com margem inferior para evitar que os blocos fiquem “colados” */
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* ===========================
+   LAYOUT EM COLUNAS
+   ============================ */
+
+/* Duas colunas flexíveis que se adaptam na responsividade básica [web:20] */
+.grid-duas-colunas {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar em uma coluna em telas menores */
+}
+
+.grid-duas-colunas > div {
+  flex: 1 1 280px;
+}
+
+/* Imagem principal com adaptação ao container e sem distorção [web:7] */
+.imagem-destaque {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  object-fit: cover; /* Garante que a imagem ocupe o espaço sem achatar [web:7] */
+}
+
+/* ===========================
+   CARDS DE PROJETOS
+   ============================ */
+
+/* Uso de flex para criar cards responsivos que se reorganizam conforme a largura [web:20] */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Cada card utiliza o box model com padding e sombra suave para dar profundidade */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1 1 260px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ===========================
+   SEÇÃO COMO AJUDAR
+   ============================ */
+
+.lista-ajuda {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.lista-ajuda li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   CONTATO E FORMULÁRIO
+   ============================ */
+
+/* Layout lado a lado entre texto e formulário para melhor uso do espaço horizontal */
+.contato-conteudo {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-contato {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Labels e inputs em bloco para manter legibilidade */
+.form-contato label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.form-contato input,
+.form-contato textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #aacfc0;
+  font-size: 0.95rem;
+}
+
+/* Botão com cor forte de ação, porém mantendo a paleta verde/azul [web:6][web:9] */
+.form-contato button {
+  display: inline-block;
+  background-color: #2e8b57;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.form-contato button:hover,
+.form-contato button:focus {
+  background-color: #256b45;
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   RODAPÉ
+   ============================ */
+
+.rodape {
+  background-color: #0f2f24;
+  color: #e0f2f1;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+}
+
+/* ===========================
+   RESPONSIVIDADE BÁSICA
+   ============================ */
+
+/* Media query simples para ajustar layout em telas menores, evitando quebra do design [web:7][web:20] */
+@media (max-width: 768px) {
+  .topo-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu ul {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    font-size: 0.95rem; /* Leve ajuste para caber melhor em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .form-contato {
+    padding: 1.1rem;
+  }
+}
