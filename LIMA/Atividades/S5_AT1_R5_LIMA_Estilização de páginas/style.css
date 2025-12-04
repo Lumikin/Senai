@@ -1,298 +1,189 @@
-/* ===========================
-   RESET BÁSICO E CONFIG GERAL
-   ============================ */
+/* Arquivo CSS externo da página Ação Verde */
 
-/* Remoção de margens padrão para controlar o espaçamento de forma consistente */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Facilita o uso do box model e evita “estouro” de largura */
+  box-sizing: border-box;
 }
 
-/* Uso de fonte sem serifa para facilitar a leitura em tela e cores suaves de fundo/texto [web:9][web:19] */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #f0f8f5; /* Verde bem claro para sensação de leveza e natureza [web:9] */
-  color: #23413a; /* Verde escuro suave para contraste e boa leitura [web:9][web:19] */
+  background-color: #d0ddd0;
+  color: #727d73;
 }
 
-/* Centraliza e limita a largura do conteúdo, ajudando na leitura em telas grandes [web:20] */
-.container {
-  width: 90%;
-  max-width: 1120px;
+/* Topo + menu com logo e textos em linha */
+.topo {
+  background-color: #727d73;
+  color: #f0f0d7;
+  padding: 24px 0;
+}
+
+.topo-cont {
+  width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ===========================
-   TOPO E MENU
-   ============================ */
-
-/* Fundo em gradiente com verde e azul claro para transmitir natureza + confiança [web:6][web:19] */
-.topo {
-  background: linear-gradient(135deg, #2e8b57, #4fc3f7);
-  color: #ffffff;
-  padding: 1.5rem 0;
-}
-
-/* Flex para alinhar logo e menu na mesma linha em telas maiores [web:20] */
-.topo-conteudo {
+.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 24px;
 }
 
-/* Logo com ícone e textos empilhados, reforçando identidade visual */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo img {
+.menu img {
   width: 48px;
   height: 48px;
-  object-fit: contain; /* Evita distorção do ícone em diferentes tamanhos [web:7] */
+  object-fit: contain;
 }
 
-.logo h1 {
-  font-size: 1.6rem;
+.menu h1 {
+  font-size: 27px;
 }
 
-.logo p {
-  font-size: 0.9rem;
+.menu p {
+  font-size: 14px;
   opacity: 0.9;
 }
 
-/* Menu usando flex para distribuir os links horizontalmente */
+/* Deixa logo+títulos num bloco e o menu de links em outro, para não quebrar tudo em telas menores */
+.menu > img,
+.menu > h1,
+.menu > p {
+  flex-shrink: 0;
+}
+
 .menu ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
-/* Links em letras maiúsculas para dar destaque visual e reforçar a navegação */
 .menu a {
   text-decoration: none;
-  color: #e0f7fa;
+  color: #f0f0d7;
   font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-  padding: 0.4rem 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  font-size: 15px;
+  letter-spacing: 0.96px;
+  padding: 6px 0;
 }
 
-/* Estado hover para feedback visual no menu, garantindo boa experiência do usuário [web:7] */
-.menu a:hover,
-.menu a:focus {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-/* ===========================
-   SEÇÕES GERAIS
-   ============================ */
-
-/* Espaçamento vertical generoso para “fazer o layout respirar” [web:7] */
+/* Seções gerais */
 .secao {
-  padding: 3rem 0;
+  padding: 48px 0;
 }
 
-/* Fundo claro alternando entre branco e verde muito claro para ritmo visual [web:9] */
 .secao-clara {
-  background-color: #ffffff;
+  background-color: #f0f0d7;
 }
 
 .secao-media {
-  background-color: #e1f5e4; /* Verde médio suave para criar contraste sem pesar [web:9] */
+  background-color: #aab99a;
 }
 
-.secao-escura {
-  background-color: #1b4b3b;
-  color: #e0f7fa;
-}
-
-/* Títulos com cor de destaque e espaçamento inferior para separar do texto */
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #1b5e20; /* Verde mais intenso para reforçar identidade ambiental [web:9] */
+  font-size: 29px;
+  margin-bottom: 24px;
+  color: #727d73;
 }
 
 h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-  color: #155f3d;
+  font-size: 19px;
+  margin-bottom: 12px;
+  color: #727d73;
 }
 
-/* Parágrafos com margem inferior para evitar que os blocos fiquem “colados” */
 p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 16px;
+  font-size: 16px;
 }
 
-/* ===========================
-   LAYOUT EM COLUNAS
-   ============================ */
-
-/* Duas colunas flexíveis que se adaptam na responsividade básica [web:20] */
-.grid-duas-colunas {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap; /* Permite quebrar em uma coluna em telas menores */
+/* Seção Sobre nós */
+.sobre-nos {
+  width: 900px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.grid-duas-colunas > div {
-  flex: 1 1 280px;
-}
-
-/* Imagem principal com adaptação ao container e sem distorção [web:7] */
-.imagem-destaque {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  object-fit: cover; /* Garante que a imagem ocupe o espaço sem achatar [web:7] */
-}
-
-/* ===========================
-   CARDS DE PROJETOS
-   ============================ */
-
-/* Uso de flex para criar cards responsivos que se reorganizam conforme a largura [web:20] */
+/* Cards de projetos */
 .cards {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+  width: 1024px;
+  margin: 0 auto;
+  gap: 24px;
+  margin-top: 24px;
 }
 
-/* Cada card utiliza o box model com padding e sombra suave para dar profundidade */
 .card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  flex: 1 1 260px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  background-color: #f0f0d7;
+  padding: 24px;
 }
-
-/* ===========================
-   SEÇÃO COMO AJUDAR
-   ============================ */
+.projetos h2 {
+  text-align: center;
+}
+/* Seção Como ajudar */
+.Ajuda {
+  width: 900px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 .lista-ajuda {
   list-style: disc;
-  padding-left: 1.5rem;
+  padding-left: 24px;
+  margin-top: 8px;
 }
 
 .lista-ajuda li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
-/* ===========================
-   CONTATO E FORMULÁRIO
-   ============================ */
-
-/* Layout lado a lado entre texto e formulário para melhor uso do espaço horizontal */
-.contato-conteudo {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.form-contato {
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-/* Labels e inputs em bloco para manter legibilidade */
-.form-contato label {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.95rem;
-}
-
-.form-contato input,
-.form-contato textarea {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: 1px solid #aacfc0;
-  font-size: 0.95rem;
-}
-
-/* Botão com cor forte de ação, porém mantendo a paleta verde/azul [web:6][web:9] */
-.form-contato button {
-  display: inline-block;
-  background-color: #2e8b57;
-  color: #ffffff;
-  border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.form-contato button:hover,
-.form-contato button:focus {
-  background-color: #256b45;
-  transform: translateY(-1px);
-}
-
-/* ===========================
-   RODAPÉ
-   ============================ */
-
+/* Rodapé */
 .rodape {
-  background-color: #0f2f24;
-  color: #e0f2f1;
+  background-color: #727d73;
+  color: #f0f0d7;
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.85rem;
+  padding: 16px 0;
+  font-size: 14px;
 }
 
-/* ===========================
-   RESPONSIVIDADE BÁSICA
-   ============================ */
-
-/* Media query simples para ajustar layout em telas menores, evitando quebra do design [web:7][web:20] */
+/* Responsividade básica */
 @media (max-width: 768px) {
-  .topo-conteudo {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu {
+    gap: 16px;
   }
 
   .menu ul {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    justify-content: flex-start;
+    gap: 12px;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 26px;
   }
 
   body {
-    font-size: 0.95rem; /* Leve ajuste para caber melhor em telas pequenas */
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .menu ul {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .card {
-    padding: 1.1rem;
+  .secao {
+    padding: 35px 0;
   }
 
-  .form-contato {
-    padding: 1.1rem;
+  .card {
+    padding: 19px;
   }
 }
